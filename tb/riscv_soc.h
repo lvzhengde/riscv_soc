@@ -5,8 +5,8 @@
 
 #include "axi4_lite.h"
 #include "axi4.h"
+#include "Vriscv_soc.h"
 
-class Vriscv_soc;
 class VerilatedVcdSc;
 
 //-------------------------------------------------------------

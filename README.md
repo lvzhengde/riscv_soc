@@ -56,13 +56,13 @@ Dependancies;
 
 To build the testbench;
 ```
-cd tb
+cd sim
 make 
 ````
 
 To run the provided test executable;
 ```
-cd tb
+cd sim
 make run
 ````
 

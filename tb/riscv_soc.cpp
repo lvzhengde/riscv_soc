@@ -1,6 +1,5 @@
 
 #include "riscv_soc.h"
-#include "Vriscv_soc.h"
 
 #if VM_TRACE
 #include "verilated.h"

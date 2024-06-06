@@ -20,7 +20,7 @@ clean:
 	make -C ../core/isa_sim $@
 	make -f generate_verilated.mk  CORE=$(CORE) $@
 	make -f build_sysc_tb.mk $@
-	@rm -rf *.vcd
+	@rm -rf logs 
 
 run: build
 	./build/test.x -f $(TEST_IMAGE)

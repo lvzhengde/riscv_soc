@@ -91,8 +91,6 @@ public:
         m_mem->axi_in(mem_out);
         m_mem->axi_out(mem_in);
         m_mem->enable_delays(false);
-
-        verilator_trace_enable("verilator.vcd", m_dut);
     }
     //-----------------------------------------------------------------
     // Trace

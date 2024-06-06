@@ -5,15 +5,6 @@
 #include "verilated.h"
 #include "verilated_vcd_sc.h"
 
-#define verilator_trace_enable(vcd_filename, dut) \
-        if (waves_enabled()) \
-        { \
-            Verilated::traceEverOn(true); \
-            VerilatedVcdSc *v_vcd = new VerilatedVcdSc; \
-            dut->trace_enable (v_vcd); \
-            v_vcd->open (vcd_filename); \
-            this->m_verilate_vcd = v_vcd; \
-        }
 
 //-----------------------------------------------------------------
 // Module
@@ -44,11 +35,11 @@ public:
     virtual void abort(void)
     {
         cout << "TB: Aborted at " << sc_time_stamp() << endl;
-        if (m_verilate_vcd)
+        if (m_verilate_vcd.get() != nullptr)
         {
-            m_verilate_vcd->flush();
-            m_verilate_vcd->close();
-            m_verilate_vcd = NULL;
+            m_verilate_vcd.get()->flush();
+            m_verilate_vcd.get()->close();
+            m_verilate_vcd.reset();
         }
     }
 
@@ -70,8 +61,13 @@ public:
             return std::string(s);
     }
 
+    void init_trace_ptr(VerilatedVcdSc* ptr)
+    {
+        m_verilate_vcd = std::shared_ptr<VerilatedVcdSc>(ptr);
+    }    
+
 protected:
-    VerilatedVcdC   *m_verilate_vcd;
+    std::shared_ptr<VerilatedVcdSc>   m_verilate_vcd;
 };
 
 #endif
