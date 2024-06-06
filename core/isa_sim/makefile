@@ -64,7 +64,7 @@ lib: $(LIB_OBJ)
 	g++ -shared -o $(TARGET_LIB) $(LIB_OBJ)
 
 clean:
-	-rm -rf $(OBJ_DIR) $(TARGET) $(TARGET_LIB)
+	@rm -rf obj $(TARGET) $(TARGET_LIB)
 
 run: $(TARGET)
 	./$(TARGET) -f $(RUN_ELF) $(RUN_OPTS)

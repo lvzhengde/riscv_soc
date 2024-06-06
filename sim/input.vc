@@ -1,0 +1,37 @@
+// This file typically lists flags required by a large project, e.g. include directories
+../soc/axi4_arb.v
+../soc/axi4lite_axi4_conv.v
+../soc/axi4_lite_tap.v
+../soc/axi4_retime.v
+../soc/dport_bridge.v
+../soc/gpio_defs.v
+../soc/gpio.v
+../soc/icache_data_ram.v
+../soc/icache_tag_ram.v
+../soc/icache.v
+../soc/irq_ctrl_defs.v
+../soc/irq_ctrl.v
+../soc/riscv_soc.v
+../soc/riscv_top.v
+../soc/soc.v
+../soc/spi_lite_defs.v
+../soc/spi_lite.v
+../soc/timer_defs.v
+../soc/timer.v
+../soc/uart_lite_defs.v
+../soc/uart_lite.v
+
+../core/core/rv32imsu/riscv_alu.v
+../core/core/rv32imsu/riscv_core.v
+../core/core/rv32imsu/riscv_csr.v
+../core/core/rv32imsu/riscv_decode.v
+../core/core/rv32imsu/riscv_defs.v
+../core/core/rv32imsu/riscv_exec.v
+../core/core/rv32imsu/riscv_fetch.v
+../core/core/rv32imsu/riscv_lsu.v
+../core/core/rv32imsu/riscv_mmu_arb.v
+../core/core/rv32imsu/riscv_mmu.v
+../core/core/rv32imsu/riscv_muldiv.v
+../core/core/rv32imsu/riscv_regfile.v
+
++librescan +libext+.v+.sv+.vh+.svh -y .

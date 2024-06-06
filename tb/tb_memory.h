@@ -72,6 +72,8 @@ public:
             // Detect overlapping regions
             else if (m_mem[i]->match(base) || m_mem[i]->match(base + size - 1))
                 return false;
+        
+        return false;
     }
 
     bool add_region(uint8_t *mem, uint32_t base, uint32_t size)

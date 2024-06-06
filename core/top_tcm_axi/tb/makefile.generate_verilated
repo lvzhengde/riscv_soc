@@ -16,6 +16,7 @@ RTL_INCLUDE       = ../../core/$(CORE)
 # Verilator options
 VERILATE_PARAMS  ?= --trace
 VERILATOR_OPTS   ?= --pins-sc-uint
+VERILATOR_OPTS   += -Wno-fatal
 
 TARGETS          ?= $(OUTPUT_DIR)/V$(NAME)
 
